@@ -22,12 +22,12 @@ function playGame(count){
         return null;
     }
 
-    function playRound(humanChoice, compurterChoice){
+    function playRound(humanChoice, computerChoice){
         // Get capitalized string of both sides' choice
         const human = arr[humanChoice].at(0).toUpperCase() + arr[humanChoice].slice(1);
-        const com = arr[compurterChoice].at(0).toUpperCase() + arr[compurterChoice].slice(1);
+        const com = arr[computerChoice].at(0).toUpperCase() + arr[computerChoice].slice(1);
 
-        const result = decideWinner(humanChoice, compurterChoice);
+        const result = decideWinner(humanChoice, computerChoice);
 
         let resultMessage;
 
@@ -45,11 +45,11 @@ function playGame(count){
         return result;
     }
 
-    function decideWinner(humanChoice, compurterChoice){
+    function decideWinner(humanChoice, computerChoice){
         // Process 'computerChoice': map '2' to "rock", '1' to "paper", '0' to "scissors"
-        compurterChoice = -compurterChoice + 2;
+        processedComputerChoice = -computerChoice + 2;
 
-        switch ((humanChoice + compurterChoice) % 3){
+        switch ((humanChoice + processedComputerChoice) % 3){
             case 0:
                 return WIN;
             case 1:
@@ -64,9 +64,9 @@ function playGame(count){
 
     for (let i = 0; i < count; i++){
         const humanSelection = getHumanChoice();
-        const compurterSelection = getComputerChoice();
+        const computerSelection = getComputerChoice();
 
-        const roundResult = playRound(humanSelection, compurterSelection);
+        const roundResult = playRound(humanSelection, computerSelection);
 
         // Manipulate score according to result of round
         if (roundResult === WIN){
