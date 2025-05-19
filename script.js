@@ -1,5 +1,4 @@
 function playGame(count){
-    // Strings representing 3 results
     const WIN = "You win!"
     const LOSE = "You lose!"
     const DRAW = "Draw!"
@@ -12,7 +11,6 @@ function playGame(count){
     }
 
     function getHumanChoice(){
-        // Prompt user's choice
         const choice = prompt("Rock Paper Scissors Game! Select your choice.", "'rock' or 'paper' or 'scissors'");
 
         // Return corresponding index from 'arr'
@@ -25,13 +23,12 @@ function playGame(count){
     }
 
     function playRound(humanChoice, compurterChoice){
-        // Get string of both sides' choice
+        // Get capitalized string of both sides' choice
         const human = arr[humanChoice].at(0).toUpperCase() + arr[humanChoice].slice(1);
         const com = arr[compurterChoice].at(0).toUpperCase() + arr[compurterChoice].slice(1);
 
         const result = decideWinner(humanChoice, compurterChoice);
 
-        // Message to show result of round
         let resultMessage;
 
         switch (result){
@@ -84,17 +81,17 @@ function playGame(count){
         `Your score: ${humanScore}\nComputer's score: ${computerScore}`;
 
     if (humanScore > computerScore){
-        gameResult = `${gameResult}\n${WIN}`;
+        gameResult += "\n" + WIN;
     } else if (humanScore < computerScore){
-        gameResult = `${gameResult}\n${LOSE}`;
+        gameResult += "\n" + LOSE;
     } else {
-        gameResult = `${gameResult}\n${DRAW}`;
+        gameResult += "\n" + DRAW;
     }
 
     console.log(gameResult);
 }
 
-// Play 5 rounds
+
 playGame(5);
 
 
