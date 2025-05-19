@@ -7,7 +7,6 @@ function playGame(count){
     // Map '0' to "rock", '1' to "paper", '2' to "scissors"
     const arr = ["rock", "paper", "scissors"];
 
-    // Get random int bewteen 0 and 2
     function getComputerChoice(){
         return Math.floor(Math.random() * 3);
     }
