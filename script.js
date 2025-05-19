@@ -30,7 +30,6 @@ function playGame(count){
         const human = arr[humanChoice].at(0).toUpperCase() + arr[humanChoice].slice(1);
         const com = arr[compurterChoice].at(0).toUpperCase() + arr[compurterChoice].slice(1);
 
-        // 
         const result = decideWinner(humanChoice, compurterChoice);
 
         // Message to show result of round
@@ -54,7 +53,6 @@ function playGame(count){
         // Process 'computerChoice': map '2' to "rock", '1' to "paper", '0' to "scissors"
         compurterChoice = -compurterChoice + 2;
 
-        // Decide winner using modulus
         switch ((humanChoice + compurterChoice) % 3){
             case 0:
                 return WIN;
